@@ -1,0 +1,7 @@
+# Dense embeddings and LoRA fine-tuning
+-r requirements.txt
+torch>=2.2
+sentence-transformers>=3.0
+peft>=0.11
+datasets>=2.18
+accelerate>=0.30
