@@ -1,0 +1,9 @@
+package com.moncefabel.plm;
+
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
+
+/** Activates JAX-RS: every resource is served under /api. */
+@ApplicationPath("/api")
+public class RestApplication extends Application {
+}
