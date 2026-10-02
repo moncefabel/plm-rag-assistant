@@ -1,0 +1,146 @@
+[
+  {
+    "mode": "bm25",
+    "self_query": false,
+    "questions": "filtered",
+    "n": 96,
+    "recall@5": 0.14,
+    "mrr@10": 0.105
+  },
+  {
+    "mode": "bm25",
+    "self_query": false,
+    "questions": "semantic",
+    "n": 96,
+    "recall@5": 0.009,
+    "mrr@10": 0.009
+  },
+  {
+    "mode": "bm25",
+    "self_query": false,
+    "questions": "all",
+    "n": 192,
+    "recall@5": 0.074,
+    "mrr@10": 0.057
+  },
+  {
+    "mode": "bm25",
+    "self_query": true,
+    "questions": "filtered",
+    "n": 96,
+    "recall@5": 0.998,
+    "mrr@10": 1.0
+  },
+  {
+    "mode": "bm25",
+    "self_query": true,
+    "questions": "semantic",
+    "n": 96,
+    "recall@5": 0.644,
+    "mrr@10": 0.38
+  },
+  {
+    "mode": "bm25",
+    "self_query": true,
+    "questions": "all",
+    "n": 192,
+    "recall@5": 0.821,
+    "mrr@10": 0.69
+  },
+  {
+    "mode": "dense",
+    "self_query": false,
+    "questions": "filtered",
+    "n": 96,
+    "recall@5": 0.292,
+    "mrr@10": 0.266
+  },
+  {
+    "mode": "dense",
+    "self_query": false,
+    "questions": "semantic",
+    "n": 96,
+    "recall@5": 0.247,
+    "mrr@10": 0.291
+  },
+  {
+    "mode": "dense",
+    "self_query": false,
+    "questions": "all",
+    "n": 192,
+    "recall@5": 0.27,
+    "mrr@10": 0.279
+  },
+  {
+    "mode": "dense",
+    "self_query": true,
+    "questions": "filtered",
+    "n": 96,
+    "recall@5": 0.998,
+    "mrr@10": 1.0
+  },
+  {
+    "mode": "dense",
+    "self_query": true,
+    "questions": "semantic",
+    "n": 96,
+    "recall@5": 0.69,
+    "mrr@10": 0.64
+  },
+  {
+    "mode": "dense",
+    "self_query": true,
+    "questions": "all",
+    "n": 192,
+    "recall@5": 0.844,
+    "mrr@10": 0.82
+  },
+  {
+    "mode": "hybrid",
+    "self_query": false,
+    "questions": "filtered",
+    "n": 96,
+    "recall@5": 0.286,
+    "mrr@10": 0.246
+  },
+  {
+    "mode": "hybrid",
+    "self_query": false,
+    "questions": "semantic",
+    "n": 96,
+    "recall@5": 0.094,
+    "mrr@10": 0.086
+  },
+  {
+    "mode": "hybrid",
+    "self_query": false,
+    "questions": "all",
+    "n": 192,
+    "recall@5": 0.19,
+    "mrr@10": 0.166
+  },
+  {
+    "mode": "hybrid",
+    "self_query": true,
+    "questions": "filtered",
+    "n": 96,
+    "recall@5": 0.998,
+    "mrr@10": 1.0
+  },
+  {
+    "mode": "hybrid",
+    "self_query": true,
+    "questions": "semantic",
+    "n": 96,
+    "recall@5": 0.675,
+    "mrr@10": 0.541
+  },
+  {
+    "mode": "hybrid",
+    "self_query": true,
+    "questions": "all",
+    "n": 192,
+    "recall@5": 0.837,
+    "mrr@10": 0.77
+  }
+]
