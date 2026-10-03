@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: python -m rag.data_gen
+      - run: python -m pytest -q
+      - run: python -m rag.evaluate --tag ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: retrieval-metrics
+          path: results/
+
+  java:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: gateway
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - run: mvn -B verify
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: [python, java]
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose build
