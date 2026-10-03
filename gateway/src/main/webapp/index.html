@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assistant PLM</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Assistant PLM</h1>
+    <p class="hint">Exemple : « Quels ordres de modification ont été approuvés pour la pompe hydraulique entre août et octobre 2025 ? »</p>
+
+    <form id="ask-form">
+      <input id="question" type="text" maxlength="500" placeholder="Posez votre question…" autocomplete="off" required>
+      <button type="submit">Rechercher</button>
+    </form>
+
+    <section id="status" class="status" hidden></section>
+    <section id="filters" class="filters" hidden></section>
+    <section id="answer" class="answer" hidden></section>
+    <ol id="sources" class="sources"></ol>
+
+    <h2>Historique</h2>
+    <ul id="history" class="history"></ul>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/plm-assistant.js"></script>
+</body>
+</html>
