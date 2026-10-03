@@ -1,0 +1,29 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.12.4
+    ports: ["6333:6333"]
+
+  rag-api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.rag
+      args:
+        WITH_ML: "${WITH_ML:-false}"
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      EMBED_MODEL: "${EMBED_MODEL:-hashing}"
+      EMBED_ADAPTER: "${EMBED_ADAPTER:-}"
+      LLM_BASE_URL: "${LLM_BASE_URL:-}"
+      LLM_API_KEY: "${LLM_API_KEY:-}"
+      LLM_MODEL: "${LLM_MODEL:-gpt-4o-mini}"
+    volumes:
+      - ./models:/app/models:ro
+    depends_on: [qdrant]
+    ports: ["8000:8000"]
+
+  gateway:
+    build: ./gateway
+    environment:
+      RAG_URL: http://rag-api:8000
+    depends_on: [rag-api]
+    ports: ["9080:9080"]
